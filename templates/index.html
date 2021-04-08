@@ -1,0 +1,28 @@
+<html>
+<head>
+<link rel="stylesheet" href='/static/style.css' />
+</head>
+
+<body>
+<h1>Pi Porch Party!</h1>
+
+<form action="/" onsubmit="">
+
+
+{% for routine in routines %}
+<p>
+
+<input type="radio" name="options" value={{ routine }}
+	{% if routines[routine].state == true %}
+	checked
+	{% endif %}
+	>
+{{ routines[routine].name }} </input>
+</p>
+{% endfor %}
+
+<p><input type=submit value=Floog></p>
+</form>
+
+</body>
+</html>
